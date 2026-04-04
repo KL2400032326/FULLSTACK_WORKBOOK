@@ -1,0 +1,91 @@
+.student-manager-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  border: 1px solid #d8dde5;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.student-manager-container h1 {
+  margin: 0 0 20px;
+  text-align: center;
+  color: #243447;
+}
+
+.student-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.student-form input {
+  padding: 10px 12px;
+  border: 1px solid #c5ccd8;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.student-form input:focus {
+  outline: none;
+  border-color: #3f7cff;
+  box-shadow: 0 0 0 3px rgba(63, 124, 255, 0.18);
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+  border: 1px solid #d8dde5;
+  padding: 12px;
+  text-align: left;
+}
+
+.students-table th {
+  background-color: #f2f6fb;
+  color: #243447;
+}
+
+.btn-add,
+.btn-delete {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: #1d9c4a;
+}
+
+.btn-add:hover {
+  background-color: #16813c;
+}
+
+.btn-delete {
+  background-color: #d64545;
+}
+
+.btn-delete:hover {
+  background-color: #b93434;
+}
+
+.empty-message {
+  margin: 12px 0 0;
+  font-weight: 600;
+  color: #455467;
+}
+
+@media (max-width: 768px) {
+  .student-form {
+    grid-template-columns: 1fr;
+  }
+}
