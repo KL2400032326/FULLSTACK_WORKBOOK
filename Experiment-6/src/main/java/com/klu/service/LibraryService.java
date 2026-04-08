@@ -15,6 +15,7 @@ public class LibraryService {
     }
 
     public Library createBook(Library library) {
+    	
         librarList.add(library);
         return library;
     }
@@ -36,13 +37,13 @@ public class LibraryService {
     public List<String> getAllTitle() {
     	List<String> titles=new ArrayList<>();
     	for(Library l:librarList) {
-    		titles.add(l.gettitle());
+    		titles.add(l.getTitle());
     	}
     	return titles;
     }
     public String SearchbookbyTitle(String title) {
     	for(Library l:librarList) {
-    		if(l.gettitle().equals(title)) {
+    		if(l.getTitle().equals(title)) {
     			return "Book found";
     		}
     	}

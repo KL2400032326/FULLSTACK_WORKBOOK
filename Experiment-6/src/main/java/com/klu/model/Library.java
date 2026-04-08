@@ -11,7 +11,7 @@ public Library() {
 public Library( int id , String title, String author,double price) {
 	this.id=id;
 	this.setPrice(price);
-	this.settitle(title);
+	this.setTitle(title);
 	this.setAuthor(author);
 }
 public double getPrice() {
@@ -20,10 +20,10 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
-public String gettitle() {
+public String getTitle() {
 	return title;
 }
-public void settitle(String title) {
+public void setTitle(String title) {
 	this.title = title;
 }
 public String getAuthor() {

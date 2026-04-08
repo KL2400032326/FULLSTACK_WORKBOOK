@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.klu.model.Library;
@@ -17,39 +19,39 @@ import com.klu.service.LibraryService;
 public class LibraryController {
 @Autowired
 private LibraryService ls;
-@GetMapping("/Greet")
+@GetMapping("/welcome")
 public String GetWelcome() {
 	return ls.GetWelcome();
 }
-@PostMapping("/add")
-public Library createBook(Library library) {
-    
+@PostMapping("/addbook")  
+public Library createBook(@RequestBody Library library) {  
     return ls.createBook(library);
 }
-@GetMapping("/detailsByid/{id}")
+@GetMapping("/books/{id}")
 public Library getByid(@PathVariable int id) {
 	return ls.getByid(id);
 }
-@GetMapping("/TotalBooks")
+@GetMapping("/count")
 public int countofbooks() {
 	return ls.countofbooks();
 }
-@GetMapping("/AllTitles")
+@GetMapping("/viewbooks")
 public List<String> getAllTitle() {
 	return ls.getAllTitle();
 }
-@GetMapping("/bookisthere")
-public String SearchbookbyTitle(String title){
+@GetMapping("/search/{title}")
+public String SearchbookbyTitle(@PathVariable String title){
 	return ls.SearchbookbyTitle(title);
 }
-@GetMapping("/Sampleprice")
+@GetMapping("/price")
 public double getBookPrice() {
     return ls.getBookPrice();
 }
-@GetMapping("/author")
-public String authorname(String author) {
+@GetMapping("/author/{author}")
+public String authorname( @PathVariable String author) {
 	return "Books author is"+author;
-}@GetMapping("/getAllBooks")
+}
+@GetMapping("/ViewBooks")
 public List<Library> getAllBooks(){
 	return ls.getAllBooks();
 }

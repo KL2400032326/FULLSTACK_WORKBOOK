@@ -1,15 +1,9 @@
 package com.klu.exception;
-
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDateTime;
-
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-    // Handle StudentNotFoundException
     @ExceptionHandler(StudentNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorResponse handleStudentNotFound(StudentNotFoundException ex) {
@@ -19,8 +13,6 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND.value()
         );
     }
-
-    // Handle InvalidInputException
     @ExceptionHandler(InvalidInputException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleInvalidInput(InvalidInputException ex) {
@@ -30,8 +22,6 @@ public class GlobalExceptionHandler {
                 HttpStatus.BAD_REQUEST.value()
         );
     }
-
-    // Optional: handle generic exceptions
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorResponse handleGeneral(Exception ex) {

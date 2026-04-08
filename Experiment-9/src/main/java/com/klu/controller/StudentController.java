@@ -1,13 +1,9 @@
 package com.klu.controller;
-
-
 import com.klu.exception.InvalidInputException;
 import com.klu.exception.StudentNotFoundException;
 import com.klu.entity.Student;
 import com.klu.repository.StudentRepository;
-
 import org.springframework.web.bind.annotation.*;
-
 @RestController
 @RequestMapping("/student")
 public class StudentController {
